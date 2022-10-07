@@ -49,7 +49,7 @@ this.setState({searchImages})
   }
 
   render() {
-    const { loading, items, error } = this.state;
+    const { loading, items } = this.state;
     const { handleFormSubmit } = this;
     return (
       <>
