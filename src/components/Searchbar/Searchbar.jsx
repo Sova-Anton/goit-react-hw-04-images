@@ -14,20 +14,25 @@ export default class Searchbar extends Component {
   };
 
   handleChange = event => {
-    this.setState({ searchImages: event.currentTarget.value.toLowerCase() });
+    /*Универсальной метод сбора введённых данных */
+    const { value, name } = event.target;
+    this.setState({ [name]: value.toLowerCase() });
+    // this.setState({ searchImages: event.currentTarget.value.toLowerCase() });
   };
+
   handleSubmit = event => {
     event.preventDefault();
-    /*Проверка на пустую строку, можно дополнить всплывающим сообщением */
+    /*Проверка на пустую строку */
     if (this.state.searchImages.trim() === '') {
-      toast.warn("Enter your search details.")
-      
+      toast.warn('Enter your search details.');
+
       return;
     }
 
     this.props.onSubmit(this.state.searchImages); /*Передаём значение в App */
-    this.setState({ searchImages: '' });
+    this.setState({ searchImages: ''})
   };
+
   render() {
     const { searchImages } = this.state;
     const { handleChange, handleSubmit } = this;
