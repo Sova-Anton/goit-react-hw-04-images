@@ -1,13 +1,15 @@
 import { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Box from './Box';
+import Box from '../Box';
 import { ContainerApp, Error } from './App.styled';
-import Loader from '../components/Loader/Loader';
-import { ImageGallery } from './ImageGallery/ImageGallery';
-import { LoadMoreBtn } from './Button/Button';
-import { getImages } from 'api/api';
-import Searchbar from './Searchbar';
+
+import Loader from '../Loader/Loader';
+import { ImageGallery } from '../ImageGallery/ImageGallery';
+import { LoadMoreBtn } from '../Button/Button';
+import Searchbar from '../Searchbar';
+
+import { getImages } from '../../api/api';
 
 export class App extends Component {
   state = {
@@ -50,8 +52,6 @@ export class App extends Component {
       });
     } catch (error) {
       this.setState({ status: 'rejected' });
-    } finally {
-      this.setState({ loading: false });
     }
   };
   /*Получаем значения из компонента Searcbar и очищаем предыдущий поиск*/
@@ -74,9 +74,9 @@ export class App extends Component {
       <ContainerApp>
         <Searchbar onSubmit={handleFormSubmit} />
 
-        {status === 'rejected' && 
-          <Error>Something went wrong :( Please try again later.</Error>
-        }
+        {status === 'rejected' && (
+          <Error>Something went wrong. Please try again later.</Error>
+        )}
 
         {items.length > 0 && <ImageGallery items={items} />}
         {status === 'pending' && <Loader />}

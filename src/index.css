@@ -16,7 +16,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   color: #212121;
-  background-color: #fff;
+  background-color: #e5ebff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -47,12 +47,12 @@ img {
 /*
  * Стили компонента App
  */
-.App {
+/* .App {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;
   padding-bottom: 24px;
-}
+} */
 
 /*
  * Стили компонента Searchbar
@@ -176,7 +176,7 @@ img {
 /*
  * Стили компонента Modal
  */
-
+/* 
 .Overlay {
   position: fixed;
   top: 0;
@@ -193,7 +193,7 @@ img {
 .Modal {
   max-width: calc(100vw - 48px);
   max-height: calc(100vh - 24px);
-}
+} */
 
 /*
 * Стили компонента Buton (Load more)

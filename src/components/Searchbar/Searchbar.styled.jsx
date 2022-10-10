@@ -24,7 +24,7 @@ export const SearchForm = styled.form`
   width: 100%;
   max-width: 600px;
   background-color: #fff;
-  border-radius: 3px;
+  border-radius: 20px;
   overflow: hidden;
 `;
 
@@ -54,7 +54,7 @@ export const FormInput = styled.input`
   font-size: 20px;
   border: none;
   outline: none;
-  padding-left: 4px;
+  padding-left: 15px;
   padding-right: 4px;
 
   &::placeholder {
